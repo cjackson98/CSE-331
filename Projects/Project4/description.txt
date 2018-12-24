@@ -1,0 +1,137 @@
+Project 4: Stacks
+Due: Thursday, October 4th 8:00 pm
+This is not a team project, do not copy someone else’s work.
+
+ 
+
+Description
+In this project, you will be implementing a stack class. As learned in class, a stack is an abstract data type where “pushing” and “popping” items always occurs at the same end, often referred to as the “top”. A stack class has been created for you. Your assignment is to complete the remaining functions to have a fully functional stack class, in addition to implementing functions to reverse a given stack and to replace items in a stack.
+
+ 
+
+Turning It In
+Your completed project must be submitted as a folder named "Project4" and must include:
+
+Stack.py, a python3 file.
+readme.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+ 
+Assignment Specifications
+The point of this project is to implement the functionality of a stack, which would be trivial using Python list methods. Do not use Python list methods outside of the grow or shrink functions. 
+
+ 
+
+Your task will be to complete the methods listed below:
+
+ 
+
+The Stack class is included in the starter file with the following functions and should not be edited.
+
+__init__
+
+This function initializes an empty stack. Optional argument is capacity, which defaults to two if no argument is passed in. The three member variables of the function are:
+
+capacity: the number of data items the stack can hold
+data: the data in the stack
+size: the number of data items in the stack
+__str__
+
+This function  provides a string representation of the Stack. Note that the the number of data items that this function will print is equal to size, and if there are only None items in the stack, this function will print Empty Stack. Make sure you are properly updating size if you are using this function for debugging.
+
+__eq__
+
+This function checks if two stacks are equivalent to each other, including checking their capacity, and data. If they are equal, returns True, otherwise returns False.
+
+ 
+
+The rest of the functions listed are your responsibility to complete and test. Take note of specified parameters and return values, as well as the listed time and space complexities we expect from your functions. Do not change the function signatures.
+
+ 
+
+stack_size(self): Returns the current number of items in the stack.
+
+Time complexity: O(1)
+
+Space complexity: O(1)
+
+ 
+
+is_empty(self): Returns True if the stack is empty, False if not.
+
+Time complexity: O(1)
+
+Space complexity: O(1)
+
+ 
+
+top(self): Returns the top item from the stack, None if the stack is empty. Does NOT remove the top item.
+
+Time complexity: O(1)
+
+Space complexity: O(1)
+
+ 
+
+push(self, val): Adds val to the top of the stack, returns nothing.
+
+Time complexity: O(1)*
+
+Space complexity: O(1)*
+
+ 
+
+pop(self): Removes the top item from stack by setting it back to None and returns the top item from the stack. Returns None if empty.
+
+Time complexity: O(1)*
+
+Space complexity: O(1)*
+
+ 
+
+grow(self): Resize the stack to be 2 times its previous size when stack size equals capacity. Returns nothing.
+
+Time complexity: O(N)
+
+Space complexity: O(N)
+
+ 
+
+shrink(self): Resize the stack to be half its current size when stack size is less than or equal to half its capacity. Note that stack capacity should never be below 2. Returns nothing.
+
+Time complexity: O(N)
+
+Space complexity: O(N)
+
+ 
+
+* refers to amortized time, or average case performance when the operation is done many times. Normally, pushing or popping an item to/from the stack takes constant time, until the case where you have to grow or shrink the stack. Each grow/shrink operation takes O(N) time, but you’ve waited longer to do it (until the stack is full/half empty), so the cost is “spread out” among the prior insertions/removes.
+
+ 
+
+In addition to the above methods, you must complete two more functions: reverse and replace.
+
+ 
+
+reverse(stack): Reverse the order of the given stack, stack. Returns the reversed stack.
+
+Time complexity: O(N)
+
+Space complexity: O(N)
+
+ 
+
+replace(stack, old, new): Replace all instances of the integer value old in the given stack, stack with the integer value new. Return the stack with the replaced values.
+
+Time complexity: O(N)
+
+Space complexity: O(N)
+
+ 
+Assignment Notes
+You are required to add and complete the docstring for each function. Use Project1 as a guideline to help you document your code. Make sure to include a description of the function, parameters AND what the function returns. Otherwise your docstrings will be considered incomplete.
+Do not use Python List methods outside of the grow and shrink functions.
+ 
+
+Project written by Sarah Johanknecht
