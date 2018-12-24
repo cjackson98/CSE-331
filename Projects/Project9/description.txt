@@ -1,0 +1,170 @@
+Project 09: Graphs
+Due: Thursday, 12/6/2018, 9:00 pm
+
+This is your last project, START EARLY
+
+ 
+
+Assignment Overview
+The Graph ADT is a data structure that is often used to represent relationships between a set of objects called verticies (or vertexes). Graphs consist of vertexes and edges. A Vertex is a point in the Graph that stores some data. Edges are the connections between Vertices and can be directed or undirected. Graphs have applications in modeling many domains, including mapping, transportation, computer networks, and electrical engineering. There are many ways to represent graphs, in this project we will be using an adjacency list that uses a list as the underlying container. The goal of this project is to encourage you to use the concepts taught throughout the semester to solve a unique and complex problem.
+
+For this assignment you will be implementing a basic Graph ADT. Test cases will be provided for you to test your code, along with a skeleton file for you to start with where a Graph, Vertex, Path, and Edge class have already been declared for you. 
+
+This project was inspired by: https://snap.stanford.edu/data/email-Eu-core.html dataset. The data represents a network of email data at a large European research center.
+
+ 
+
+Assignment Deliverables
+Be sure to submit your project as a folder named "Project9" and include in the folder:
+
+Graph.py, a Python3 file
+readme.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+ 
+
+Assignment Specifications
+The Edge class is fully implemented and provided for you. Do not modify this class.
+
+We have provided the __init__,  __eq__, methods in the Graph class, do not modify these methods. Your task will be to complete the methods listed below in the Graph, Vertex, and Path classes. Make sure that you are adhering to the time and space complexity requirements. Do not modify function signatures in any way.
+
+***The data used to construct the Graph may not necessarily result in a DAG.***
+
+ 
+
+Edge Class:
+
+This class is provided for you, DO NOT modify it. An edge object represents an edge in the graph. It connects a source (Vertex object) with a destination (Vertex id).
+
+ 
+
+Path Class:
+
+self.vertices represents the vertices in the path in a specific order.
+
+This class keeps track of a path through the graph. This is useful in graphs because it allows for a meaninful representation of what a path is. i.e. A route in google maps is represented by a path through a graph.
+
+add_vertex(self, vertex):
+Add a Vertex id to the path.
+Return None
+O(1) time complexity
+remove_vertex(self):
+Remove the most recently added Vertex id from the path.
+Return None
+O(1) time complexity
+last_vertex(self):
+Return the last Vertex id added to the path
+If path is empty return None
+O(1) time complexity
+is_empty(self):
+Check if the path is empty.
+Return Boolean
+O(1) time complexity
+
+Vertex Class:
+
+This class represents a vertex in the Graph. 
+self.edges is a list of outgoing edges from the vertex
+self.ID is the id of the vertex
+self.visited is a boolean that represents if the vertex has already been visited.
+self.fake is a boolean that represents if the vertex is a 'fake' vertex.
+add_edge(self, destination):
+Add an edge to the Vertex given the id of the destination Vertex.
+Return None
+O(1) time complexity
+degree(self):
+Return the number of outgoing edges (degree) of the Vertex
+O(1) time complexity
+get_edge(self, destination):
+Returns the Edge that goes to a specified destination node.
+If the edge is not found, return None
+O(n) time complexity
+get_edges(self):
+Returns a list of all of the edges.
+O(1) time complexity
+set_fake(self):
+Set the vertex as a fake vertex.
+O(1) time complexity
+visit(self):
+Set the vertex as visited.
+O(1) time complexity
+ 
+
+Graph Class:
+
+An abstract class that represents a directed graph
+self.adj_list represents the adjacency list storing the graph. Structure: {vertex_id: Vertex()}
+self.size is the size of the graph. Only used to construct graph, disregard if constructing graph from file. Do not modify.
+self.connectedness represents the connectedness of the graph, value between 0 and 1. Do not modify.
+self.filename is the filename used to construct a graph, default value is None.
+self.construct_graph() is the construct graph method called when a Graph Object is instantiated.
+generate_edges(self):
+DO NOT EDIT THIS METHOD
+Generates directed edges between vertices
+Returns a generator object that returns a tuple of the form (source ID, destination ID)
+used to construct an edge
+get_vertex(self, id):
+Returns the vertex with the specified id. 
+If the vertex is not found, return None
+O(1) time complexity
+construct_graph(self):
+Add all edges to a Graph. If a filename is provided, read from the file to construct the graph and disregard the size and connectedness, otherwise use the generate_edges method to construct the graph. Do not accept graphs with a size less than or equal to 0 or connectedness not in the range (0, 1]
+If provided with bad input, raise a GraphError.
+Both forms of input return data in the following format: [source, destination]
+Uses the dictionary ​self.adj_list to store vertices’ IDs as keys and their objects as values.
+Do NOT insert parallel edges in your graph.
+Sample file with example input is linked below
+test_construction_simple.txt
+
+O(E) time complexity, E is the number of edges to insert.
+BFS(self, start, target):
+Breadth First Search given a start ID, find a path to the target ID. 
+If the target node is not found, return an empty Path, otherwise, return a Path of vertex id's from the start vertex to the target vertex.
+If there are multiple paths, choose 1 path to return.
+File for simple search graph: test_search_simple.txt, Same for DFS
+O(V+E), V is the number of vertices, E is the number of edges
+DFS(self, start, target, path=Path()):
+Depth First Search with the same return specifications as BFS
+Must be recursive
+O(V+E), V is the number of vertices, E is the number of edges
+ 
+
+External Functions
+
+Using the aformentioned emails dataset, we can create a structure using the Graph ADT where the vertices represent email adresses and edges represent messages sent. We assume that if a vertex has a degree 0 then it is a likely candidate for a fake email address. This is because email messages are coming into the vertex, but no email messages are sent from it. You will be writing the the functions to identify all potential fake emails. 
+
+fake_emails(graph, mark_false=False):
+Finds all fake vertices in the Graph, sets them to be fake, and adds their IDs to a list. A Vertex is fake if the degree of the vertex is 0 (messages coming in, no messages going out). 
+If mark_false is True, set the fake flag on each fake vertex.
+You are allowed to iterate over graph.adj_list ONLY in the scope of this method.
+The picture below clarifies what this means.
+Returns a list of fake vertex IDs. 
+O(V(V+E)) time complexity, V is the number of vertices, E is the number of edges
+check_fake_emails(start, emails=list())
+This is a nested function within fake_emails() DO NOT move it outside of fake_emails(). 
+Given a start Vertex ID, find all fake email addressses that can be reached from that ID and remove the edge connecting to the fake address.
+DO NOT access graph.adj_list directly, use accessors.
+Must be recursive.
+Python allows for nesting functions, this can be a powerfool tool for writing clean modular code, you can read more about it here.
+O(V+E) time complexity, V is the number of vertices, E is the number of edges
+
+ 
+
+Assignment Specifications
+You are required to add and complete docstrings for each function that you complete.
+You are provided with skeleton code for the Graph, Vertex, and Path classes and you must complete each empty function. You may use more functions if you'd like, but you must complete the ones given to you. If you do choose to make more functions, you are required to complete docstrings for those as well.
+Make sure that you are adhering to all specifications for the functions, including time complexity and whether or not the function is recursive.
+An important part of this class, and your engineering career, is being able to identify different possible situations, write your own testing, and determine what is going wrong in your code. In the real world, there is no one around to tell you what situations your code may face and you must use rigorous testing before release to try to catch as many problems as possible.
+ 
+
+Project authored by Yash Vesikar and David Ackley.
+
+ 
+
+EDITS:
+
+The construct_graph() method should raise a GraphError when:
+  Incorrect filename is provided
+  If no filename and the size is less than or equal to 0
+  Connectedness is not 0 < connectedness <=1 
