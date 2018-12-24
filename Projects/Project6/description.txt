@@ -1,0 +1,81 @@
+Project 06: Binary Search Trees
+ 
+
+Assignment Overview
+A tree structure is hierarchical, unlike many other structures such as linked lists, queues, and stacks. Tree structures are often used due to many operations requiring less time than linear structures. For this assignment, you will be implementing a Binary Search Tree. Test cases will be provided for you to test your code, along with a skeleton file for you to start with where a node class has been defined for you.
+
+ 
+Assignment Deliverables
+Be sure to submit your project as a folder named "Project6" and include in the folder:
+
+BinarySearchTree.py, a Python3 file
+readme.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+ 
+Assignment Specifications
+The node class is fully implemented and provided for you. Do not modify this class.
+
+We have provided the __init__,  __eq__, and _compare methods in the BinarySearchTree class, do not modify these methods. Your task will be to complete the methods listed below in the BinarySearchTree class that have not been completed for you. Make sure that you are adhering to the time and space complexity requirements. Do not modify function signatures in any way.
+
+insert(self, value):
+Takes in a value to be added to the tree as a node
+Adds the node to the tree
+Do nothing if the value is already in the tree
+O(height) time complexity
+remove(self, value):
+Takes in a key to remove from the tree
+Do nothing if the key is not found
+When removing a node with two children, replace with the minimum of the right subtree
+O(height) time complexity
+search(self, value, node):
+Takes in a value to search for and a node which is the root of a given tree or subtree
+Returns the node with the given key if found, else returns the potential parent node
+Must be recursive
+O(height) time complexity
+inorder(self, node):
+Returns a generator object of the tree traversed using the inorder method of traversal starting at the given node
+Points will be deducted if the return of this function is not a generator object(hint: yield)
+Must be recursive
+O(n) time complexity
+preorder(self, node):
+Same as inorder, only using the preorder method of traversal
+O(n) time complexity
+postorder(self, node):
+Same as inorder, only using the postorder method of traversal
+O(n) time complexity
+min(self, node):
+Returns the node with the minimum of the tree rooted at the given node
+Must be recursive
+O(height) time complexity
+max(self, node):
+Returns the node with the maximum of the tree rooted at the given node
+Must be recursive
+O(height) time complexity
+height(self, node):
+Returns the height of the tree rooted at the given node
+Must be recursive
+O(n) time complexity
+depth(self, value):
+Returns the depth of the node with the given value
+O(height) time complexity
+is_perfect(self, node):
+Returns a Boolean of whether or not the BST rooted at the given node is perfect
+O(n) time complexity
+is_degenerate(self):
+Returns a Boolean of whether or not the BST is degenerate
+O(n) time complexity
+get_size(self):
+Returns the number of nodes in the BST
+O(1) time complexity
+ 
+
+Assignment Specifications
+You are required to add and complete docstrings for each function that you complete.
+You are provided with skeleton code for the BinarySearchTree class and you must complete each empty function. You may use more functions if you'd like, but you must complete the ones given to you. If you do choose to make more functions, you are required to complete docstrings for those as well.
+Make sure that you are adhering to all specifications for the functions, including time complexity and whether or not the function is recursive.
+
+ 
+
+Project authored by Brandon Field and Brandon Garrison, modified by Brandon Field
