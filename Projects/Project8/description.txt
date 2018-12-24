@@ -1,0 +1,99 @@
+Project 08: Binary Min-Heaps
+ 
+Assignment Overview
+In this project, you will be implementing a Binary Min-Heap class. The definition of a binary min-heap states that when given a node, all strict descendants are greater than the node, and both sub-trees are also binary min-heaps. Additionally, you will implement the heap sort algorithm using your heap class implementation.
+
+ 
+Assignment Deliverables
+Be sure to submit your project as a folder named "Project8" and include in the folder:
+
+BinaryMinHeap.py, a Python3 file
+README.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+ 
+Assignment Specifications
+For the min heap, we will only be storing the priority value. There is no node class needed.
+
+We have provided the __init__ and  __eq__ functions in the BinaryMinHeap class, do not modify these methods. Your task will be to complete the methods listed below in the BinaryMinHeap class that have not been completed for you. Make sure that you are adhering to the time complexity requirements. Do not modify function signatures in any way.
+
+__str__(self):
+This function is for your use only and will not be graded.
+get_size(self):
+Returns the number of nodes currently in the Heap
+Time complexity: O(1)
+Space complexity: O(1)
+parent(self, position):
+Finds the parent of the node at index position
+Returns the index of the parent node
+Time complexity: O(1)
+Space complexity: O(1)
+left_child(self, position):
+Finds the left child of the node at index position
+Returns the index of the left child node
+Time complexity: O(1)
+Space complexity: O(1)
+right_child(self, position):
+Finds the right child of the node at index position
+Returns the index of the right child node
+Time complexity: O(1)
+Space complexity: O(1)
+has_left(self, position):
+Returns True if the node at index position has a left child, False otherwise
+Time complexity: O(1)
+Space complexity: O(1)
+has_right(self, position):
+Returns True if the node at index position has a left child, False otherwise
+Time complexity: O(1)
+Space complexity: O(1)
+find(self, value):
+Returns the index of the node with value
+Returns None if the value is not found in the heap
+Time complexity: O(n)
+Space complexity: O(1)
+heap_push(self, value):
+Adds a node with the given value and adds it to the heap
+Duplicates are ignored
+Returns nothing
+Time complexity: O(n)*
+Space complexity: O(1)
+heap_pop(self, value):
+Removes the node with the given value
+Time complexity: O(nlog(n))*
+Space complexity: O(1)
+pop_min(self):
+Removes the min node in the heap
+Returns the value it removed, or None
+Time complexity: O(log(n))*
+Space complexity: O(1)
+swap(self, p1, p2):
+Swaps the elements at indices p1 and p2
+Time complexity: O(1)
+Space complexity: O(1)
+percolate_up(self, position):
+Moves node at index position up the tree until it is in the proper place
+Time complexity: O(log(n))*
+Space complexity: O(1)
+percolate_down(self, position):
+Moves node at index position down the tree until it is in the proper place
+Time complexity: O(log(n))*
+Space complexity: O(1)
+heap_sort(self, unsorted):
+Given an unsorted list, performs Heap Sort
+Returns the sorted list
+Time complexity: O(n^2)
+Different from standard Heap Sort because we are ignoring duplicates
+Space complexity: O(n)
+* refers to amortized time
+
+ 
+Assignment Specifications
+You are required to add and complete docstrings for each function that you complete.
+You are provided with skeleton code for the BinaryMinHeap class and you must complete each empty function. You may use more functions if you'd like, but you must complete the ones given to you. If you do choose to make more functions, you are required to complete docstrings for those as well.
+You are allowed to use append and pop methods in the insert, remove, and remove_min functions, to avoid utilizing separate grow and shrink functions. You are not allowed to use these or any other python list methods in the other functions. Len() may be used as needed.
+Make sure that you are adhering to all specifications for the functions, including time complexity.
+Due to the nature and intent of hidden test cases, limited help will be given regarding students failing hidden tests. Exceptions can be made for certain circumstances, but in general less help will be given to students requesting help on failing hidden test cases. The point of hidden cases is to think of edge cases and make sure you test it yourself, not have instructors tell you why you are failing.
+
+
+Project authored by Sarah Byrum
