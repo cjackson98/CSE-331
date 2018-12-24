@@ -1,0 +1,63 @@
+Project 5: Circular Queues
+ 
+
+Description
+In this project, you will be implementing a circular queue. A queue is an abstract data type where the first item in is the first item out, also known as the FIFO principle. A circular queue is one that uses an underlying list and uses modulo arithmetic to allow for reuse of space after enqueues and dequeues. 
+
+
+Assignment Deliverables
+Your completed project must be submitted as a folder named "Project5" and must include:
+
+CircularQueue.py, a python3 file.
+readme.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+Assignment Specifications
+The CircularQueue constructor (__init__) and equality (__eq__) operator have been provided for you. Do not modify these. Inside the constructor, these attributes are initialized:
+
+self.capacity - The capacity of the queue, defaulted to 4
+self.size - The number of elements in the queue
+self.data - The underlying data array that holds the data for our queue
+self.head - The index of the first element in the queue
+self.tail - The index where the next element will be added
+Your task will be to complete the methods listed below in the CircularQueue class. Make sure that you are adhering to the time and space complexity requirements. Do not modify function signatures in any way.
+
+__len__(self)
+Returns the size of the queue
+O(1) time complexity, O(1) space complexity
+first_value(self)
+Returns the front of the queue
+O(1) time complexity, O(1) space complexity
+is_empty(self)
+Returns whether or not is empty (bool)
+O(1) time complexity, O(1) space complexity
+enqueue(self, data)
+Add a number to the back of the queue
+Return None
+O(1)* time complexity, O(1)* space complexity
+dequeue(self)
+Remove an element from the front of a queue if not empty, do nothing otherwise
+Return element popped
+O(1)* time complexity, O(1)* space complexity
+grow(self)
+Doubles the capacity of the queue immediately when capacity is reached to make room for new elements
+Moves the head to the front of the newly allocated list
+O(n) time complexity, O(n) space complexity
+shrink(self)
+Halves the capacity of the queue if the size is 1/4 or less of the capacity
+Capacity should never go below 4
+Moves the head to the front of the newly allocated list
+O(n) time complexity, O(n) space complexity
+__str__(self)
+This method is solely for development purposes for you and will not be tested.
+ 
+
+* Refers to a complexity requirement that is amortized
+
+Assignment Specifications
+You are required to add and complete docstrings for each function that you complete.
+You are provided with skeleton code for the Queue class and you must complete each empty function. You may use more functions if you'd like, but you must complete the ones given to you. If you do choose to make more functions, you are required to complete docstrings for those as well.
+
+
+Project authored by Brandon Field
