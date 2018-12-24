@@ -1,0 +1,80 @@
+Project 2: Recursion
+Due: Thursday, September 20th 8:00 pm
+
+This is not a team project, do not copy someone else’s work.
+
+ 
+
+Description
+For this project, you will be implementing recursive functions for an ordered, singly linked list. Unlike in project 1, there is no LinkedList class. For each function, it takes in the head node of a linked list and uses recursion to perform an action. (To put in context, you used iterative algorithms in project 1.) Let it be clear - all of the functions you are implementing are RECURSIVE, so they call themselves.
+
+We have provided to you the LinkedNode class.
+
+ 
+
+Turning It In
+Your completed project must be submitted as a folder named "Project2" and must include:
+
+Recursion.py, a python3 file.
+LinkedNode.py, the provided LinkedNode class that should not be edited.
+README.txt, a text file that includes:
+Your name and feedback on the project
+How long it took to complete
+A list of any external resources that you used, especially websites (make sure to include the URLs) and which function(s) you used this information for.
+ 
+
+Assignment Specifications
+The LinkedNode class is included in the skeleton file with the following functions and should not be edited.
+
+__init__(self, value, next_node)
+This function initializes a node with a given value and next_node reference. The next_node argument is required for this project, which is different from project 1.
+__str__(self)
+A node is represented in string form as ‘value’. Use str(node) to make into a string.
+ 
+
+You must complete and implement the following functions in Recursion.py. Take note of the specified return values and input parameters. Do not change the function signatures.
+
+In addition to the Mimir testing, you will also be graded on the run time performance of your functions. See below what is expected for each function.
+
+insert(value, node=None)
+Insert the given value into the linked list that has head node
+The value should be inserted such that the list remains in ascending order
+Return the starting node of the linked list
+Worst case: O(n)
+string(node)
+Generate and return a string representation of the list, starting at node
+The values should be separated by a comma and a single space, with no leading or trailing comma
+Worst case: O(n)
+reversed_string(node)
+Generate and return a string representation of the list with head node, in reverse order
+The values should be separated by a comma and a single space, with no leading or trailing comma
+Worst case: O(n)
+remove(value, node)
+Remove the first node in the list with the given value starting at head node
+Return the starting node of the linked list
+Worst case: O(n)
+remove_all(value, node)
+Remove all nodes in the list with the given value starting at head node
+Return the starting node of the linked list
+Worst case: O(n)
+search(value, node)
+Looks for value in list starting with head node
+Returns True if the value is in the list and False if it is not in the list
+Worst case: O(n)
+length(node)
+Calculates and returns the length of the list starting with head node
+Worst case: O(n)
+sum_all(node)
+Calculates and returns the sum of the list starting with head node
+Worst case: O(n)
+count(value, node)
+Counts how many times the given value occurs in the list starting at head node
+Worst case: O(n)
+ 
+
+Assignment Notes
+You are required to add and complete the docstring for each function. Use Project1 as a guideline to help you document your code. 
+All of your functions must be recursive. 
+ 
+
+Project written by Erika Lustig
