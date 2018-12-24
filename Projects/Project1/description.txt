@@ -1,0 +1,67 @@
+Project 1: Linked List
+Due: September 13th 8:00 pm
+
+This is not a team project, do not copy someone else’s work.
+
+ 
+
+Description
+For this project, you will be implementing a Linked List class for singly linked lists. As learned in previous classes, singly linked list nodes have only a ‘next’ node pointer and a value. The Node class has already been implemented for you, in addition to a few functions of the Linked List class. Your assignment is to complete the remaining functions.
+
+ 
+
+Turning It In
+Your completed project must be submitted as a folder named "Project1" and must include:
+
+A LinkedList.py python3 file.
+A README.txt file that includes your name and feedback on the project, such as how long it took to complete. You should also include any external resources (attributions) that you used in its development.
+After placing these to 2 files in to a folder named as Project1, please zip the folder and upload this zipped folder using Mimir.
+ 
+
+Assignment Specifications
+The Node class is included in the skeleton file with the following functions and should not be edited.
+
+__init__(self, value, next_node=None)
+This function initializes a node with a given value. Optional argument is the next_node reference, which will default to None if not passed in.
+__eq__(self, other)
+This provides comparison (‘==’) for nodes. If nodes have the same value, they are considered equal.
+__repr__(self)
+A node is represented in string form as ‘value’. Use str(node) to make into a string.
+ 
+
+The Linked List class is partially completed in the skeleton file. Function signatures or provided functions may not be edited in any way.
+
+The following functions are provided and may be used as needed.
+
+__init__(self)
+A Linked List class has three variables:
+Self.head - the first node in the linked list
+Self.tail - the last node in the linked list
+Self.size is the number of nodes in the list
+__eq__(self, other)
+This function is used to compare two linked lists. This will primarily be used for grading purposes - DO NOT CHANGE
+__repr__(self)
+This function will return the string form of a list of all of the node values, in order from head to tail. Please make sure you fully understand how to traverse Linked Lists, even though this function is provided to you in this project.
+ 
+
+You must complete and implement the following functions. Take note of the specified return values and input parameters. Do not change the function signatures.
+
+length(self) - returns the number of nodes in the list
+is_empty(self) - returns true if the linked list is empty, false if it is not empty
+front_value(self) - returns the value of the front (head) node, None for empty lists
+back_value(self) - returns the value of the back (tail) node, None for empty lists
+count(self, val) - takes a value ‘val’ and counts how many times that value occurs in the linked list, returns the number of occurrences
+find(self, val) - takes a value ‘val’ and returns true if the value is found in the list, false if the value is not found
+push_front(self, val) - this function takes a parameter ‘val’ and inserts a node with value ‘val’ at the front (head) of the linked list
+push_back(self, val) - this function takes a parameter ‘val’ and inserts a node with value ‘val’ at the back (tail) of the linked list
+pop_front(self) - this function removes the front (head) node of the linked list
+pop_back(self) - this function removes the back (tail) node of the linked list
+reverse_list(self) - this function reverses the values in the linked list
+ 
+
+Assignment Notes
+For this project, you have been provided the docstrings for each function (the part in triple quotes). You will be required to add and complete the docstrings in future projects.
+You are provided skeleton code for the LinkedList class and must complete the included methods. You may add more function in the LinkedList class than what is provided, but may not alter the function signatures in any way.
+ 
+
+Project written by Erika Lustig, updated by Sarah Byrum
