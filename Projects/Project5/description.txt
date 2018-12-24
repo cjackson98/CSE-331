@@ -1,5 +1,5 @@
 Project 5: Circular Queues
- 
+
 
 Description
 In this project, you will be implementing a circular queue. A queue is an abstract data type where the first item in is the first item out, also known as the FIFO principle. A circular queue is one that uses an underlying list and uses modulo arithmetic to allow for reuse of space after enqueues and dequeues. 
@@ -51,11 +51,11 @@ Moves the head to the front of the newly allocated list
 O(n) time complexity, O(n) space complexity
 __str__(self)
 This method is solely for development purposes for you and will not be tested.
- 
 
 * Refers to a complexity requirement that is amortized
 
-Assignment Specifications
+
+Assignment Specifications:
 You are required to add and complete docstrings for each function that you complete.
 You are provided with skeleton code for the Queue class and you must complete each empty function. You may use more functions if you'd like, but you must complete the ones given to you. If you do choose to make more functions, you are required to complete docstrings for those as well.
 
