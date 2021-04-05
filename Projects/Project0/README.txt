@@ -1,6 +1,14 @@
-Name: Chris Jackson
-Hours to complete project: 0.033
-Feedback: none
+# Project Description:
+Project 0: Sample Project
+This is a sample project and isn't worth any points. Project 0 is 0 points. Due date is pushed all the way to December because it is Project 0. Real projects will contain real deadlines.
 
+Regardless, you should complete this project in order to ensure you understand how to use Mimir before you attempt an actual project.
 
-External Sources (Attributions): none
+Description
+You are responsible for writing a program, named "project.py", that contains a function named "get_len". It should accept a single string parameter and return the length of a string. The test cases will guide you through some edge cases that aren't described here.
+
+Turning It In
+Your completed project must be submitted as a folder named "Project0" and must include:
+
+A project.py python3 file.
+A README.txt file that includes your name and feedback on the project, such as how long it took to complete. You should also include any external resources (attributions) that you used in its development.
