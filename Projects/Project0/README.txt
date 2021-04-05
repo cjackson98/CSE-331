@@ -1,4 +1,5 @@
-# Project Description:
+Project Description:
+
 Project 0: Sample Project
 This is a sample project and isn't worth any points. Project 0 is 0 points. Due date is pushed all the way to December because it is Project 0. Real projects will contain real deadlines.
 
